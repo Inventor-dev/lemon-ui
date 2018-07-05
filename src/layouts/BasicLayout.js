@@ -212,10 +212,12 @@ class BasicLayout extends React.PureComponent {
     const { isMobile: mb } = this.state;
     const bashRedirect = this.getBaseRedirect();
     const layout = (
-      <Layout style={{ height: '100vh' }}>
+      <Layout>
         <SiderMenu
           logo={logo}
           // 不带Authorized参数的情况下如果没有权限,会强制跳到403界面
+          // If you do not have the Authorized parameter
+          // you will be forced to jump to the 403 interface without permission
           Authorized={Authorized}
           menuData={getMenuData()}
           collapsed={collapsed}
@@ -238,7 +240,7 @@ class BasicLayout extends React.PureComponent {
               onNoticeVisibleChange={this.handleNoticeVisibleChange}
             />
           </Header>
-          <Content style={{ padding: '24px 24px 0', height: 'calc(100vh - 117px)', overflowY: 'auto' }}>
+          <Content style={{ margin: '24px 24px 0', height: '100%' }}>
             <Switch>
               {redirectData.map(item => (
                 <Redirect key={item.from} exact from={item.from} to={item.to} />
@@ -259,8 +261,30 @@ class BasicLayout extends React.PureComponent {
           </Content>
           <Footer style={{ padding: 0 }}>
             <GlobalFooter
-              copyright={ 
-                 <a href="https://github.com/Inventor-dev/lemon-ui" target="_blank"> Powered by <Icon type="github" /> Lemon_yp</a>
+              links={[
+                {
+                  key: 'Pro 首页',
+                  title: 'Pro 首页',
+                  href: 'http://pro.ant.design',
+                  blankTarget: true,
+                },
+                {
+                  key: 'github',
+                  title: <Icon type="github" />,
+                  href: 'https://github.com/ant-design/ant-design-pro',
+                  blankTarget: true,
+                },
+                {
+                  key: 'Ant Design',
+                  title: 'Ant Design',
+                  href: 'http://ant.design',
+                  blankTarget: true,
+                },
+              ]}
+              copyright={
+                <Fragment>
+                  Copyright <Icon type="copyright" /> 2018 蚂蚁金服体验技术部出品
+                </Fragment>
               }
             />
           </Footer>
