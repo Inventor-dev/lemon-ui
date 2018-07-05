@@ -235,7 +235,7 @@ export default class SiderMenu extends PureComponent {
         <div className={styles.logo} key="logo">
           <Link to="/">
             <img src={logo} alt="logo" />
-            <h1>Ant Design Pro</h1>
+            <h1>Lemon</h1>
           </Link>
         </div>
         <Menu
@@ -245,7 +245,12 @@ export default class SiderMenu extends PureComponent {
           {...menuProps}
           onOpenChange={this.handleOpenChange}
           selectedKeys={selectedKeys}
-          style={{ padding: '16px 0', width: '100%' }}
+          style={{
+            padding: '16px 0',
+            width: '100%',
+            height: 'calc(100% - 64px)',
+            overflowY: 'auto',
+          }}
         >
           {this.getNavMenuItems(this.menus)}
         </Menu>
