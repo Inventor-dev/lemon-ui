@@ -7,6 +7,12 @@ const menuData = [
     path: 'dashboard',
     children: [
       {
+        name: '工作台',
+        path: 'workplace',
+        // hideInBreadcrumb: true,
+        // hideInMenu: true,
+      },
+      {
         name: '分析页',
         path: 'analysis',
       },
@@ -14,11 +20,24 @@ const menuData = [
         name: '监控页',
         path: 'monitor',
       },
+    ],
+  },
+  {
+    name: '系统设置',
+    path: 'system',
+    icon: 'setting',
+    children: [
       {
-        name: '工作台',
-        path: 'workplace',
-        // hideInBreadcrumb: true,
-        // hideInMenu: true,
+        name: '用户管理',
+        path: 'user',
+      },
+      {
+        name: '机构管理',
+        path: 'organization',
+      },
+      {
+        name: '岗位管理',
+        path: 'post',
       },
     ],
   },
