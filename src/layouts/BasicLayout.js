@@ -259,11 +259,8 @@ class BasicLayout extends React.PureComponent {
           </Content>
           <Footer style={{ padding: 0 }}>
             <GlobalFooter
-              copyright={
-                <Fragment>
-                 Powered by 
-                 <a href="https://github.com/Inventor-dev/lemon-ui" target="_blank"><Icon type="github" /> Lemon_yp</a>
-                </Fragment>
+              copyright={ 
+                 <a href="https://github.com/Inventor-dev/lemon-ui" target="_blank"> Powered by <Icon type="github" /> Lemon_yp</a>
               }
             />
           </Footer>
